@@ -24,3 +24,14 @@ This project is an AI-driven web application designed to transcribe and summariz
 1. Clone the repository:
    ```bash
    git clone https://github.com/arunima-anil/Audio-Transcription-summarization-.git
+
+
+## Running the Application
+ 1.Run the Backend Server: In one terminal, navigate to the project directory and run:
+  ```bash
+  python3 trans_summ.py
+2.Run the Frontend Server: In a new terminal, navigate to the frontend directory and run:
+  ```bash
+  python3 app.py
+
+
