@@ -30,9 +30,10 @@ This project is an AI-driven web application designed to transcribe and summariz
  1.Run the Backend Server: In one terminal, navigate to the project directory and run:
   ```bash
   python3 trans_summ.py
-
+   ```
 2.Run the Frontend Server: In a new terminal, navigate to the frontend directory and run:
-    ```bash
+```bash
   python3 app.py
+```
 
 
