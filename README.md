@@ -23,4 +23,4 @@ This project is an AI-driven web application designed to transcribe and summariz
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/arunima-anil/Audio-Transcription-summarization-.git
