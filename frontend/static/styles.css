@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #007BFF; /* Bright blue */
+    --secondary-color: #0056b3; /* Darker blue for buttons */
+    --accent-color: #00aaff; /* Light blue accent */
+    --background-color: #f0f8ff; /* Soft blue background */
+    --card-background: #ffffff; /* White for content cards */
+    --text-color: #333;
+    --border-color: #e0e7ff;
+    --button-hover-color: #0056b3;
+    --button-active-color: #004080;
+    --error-bg-color: #ffcccc;
+    --error-text-color: #b30000;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.content {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    max-width: 850px;
+    width: 100%;
+    animation: fadeIn 0.7s ease-out;
+    border: 1px solid var(--border-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.action-btn {
+    padding: 0.9rem 1.8rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+.action-btn i {
+    margin-right: 0.6rem;
+}
+
+.record {
+    background-color: var(--accent-color);
+}
+
+.record:hover {
+    background-color: var(--button-hover-color);
+}
+
+.record:active {
+    background-color: var(--button-active-color);
+}
+
+.upload {
+    background-color: var(--primary-color);
+}
+
+.upload:hover {
+    background-color: var(--button-hover-color);
+}
+
+.upload:active {
+    background-color: var(--button-active-color);
+}
+
+.process {
+    background-color: var(--secondary-color);
+}
+
+.process:hover {
+    background-color: var(--button-hover-color);
+}
+
+.process:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+}
+
+.file-upload {
+    display: none;
+}
+
+.recording-indicator {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    position: relative;
+    margin-left: 1rem;
+}
+
+.recording-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    opacity: 0.7;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.result-column {
+    flex: 1;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 220px;
+    padding: 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    resize: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    width: 45px;
+    height: 45px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    background-color: var(--error-bg-color);
+    color: var(--error-text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    display: none;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .control-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .action-btn {
+        margin-bottom: 1rem;
+    }
+
+    .result-container {
+        flex-direction: column;
+    }
+
+    .result-column {
+        width: 100%;
+    }
+}
